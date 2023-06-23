@@ -26,6 +26,8 @@ Clique aqui para acessar as configurações necessarias para o funcionamento do 
 
 -Como usar o ZABBIX para realizar as coletas:
 *   Depois do ITEM validado e comparado com o dispositivo, segue passo a passo:
+
+## Config Zabbix Server GUI
 1 Crie um host
     -adicione um nome
     -adicione a fonte de coleta > *para realizar esta coleta, um dispositivo na rede sera usado para coletar e enviar, no nosso caso usamos uma instancia Zabbix Proxy, mas pode ser qualquer servidor com Zabbix Agent2.
@@ -41,6 +43,11 @@ Clique aqui para acessar as configurações necessarias para o funcionamento do 
 * FUNCIONAMENTO MODBUS
 
 Mode Slave
+
+
+## Estudo de caso Gerador Generac DepSea 855
+
+Neste estudo de caso, foi usado para monitorar 2 geradores da marca generac com o modulo de monitoramento Depsea 855. Portanto segue documentação das descobertas
 
 
 
