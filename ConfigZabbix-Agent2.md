@@ -1,0 +1,1 @@
+## Configurações Zabbix Agent 2
