@@ -10,6 +10,7 @@ Conhecimento necessario, dominio do Zabbix server, conhecimento basico Zabbix ag
 1.1 De acordo com a documentação oficial Zabbix é necessário:
 
 1.1.1 Zabbix Server
+
 1.1.2 Zabbix Agent 2
 
 Clique aqui para acessar as configurações necessarias para o funcionamento do modulo Modbus nativamente.
@@ -17,7 +18,7 @@ Clique aqui para acessar as configurações necessarias para o funcionamento do 
 
 ## 2 Requisitos Modbus
 
-Modbus poll
+2.1 Modbus poll
 
 -Para verificar as coletas dos dados do dispositivo, usa-se o software Modbus poll no link, ou procure no site do fabricante as chaves com as traducoes para as capturas.
 
