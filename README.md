@@ -3,10 +3,20 @@
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
-## Recursos do Projeto
+Conhecimento necessario, dominio do Zabbix server, conhecimento basico Zabbix agent 2
 
-Zabbix Server
-Zabbix Agent 2
+## 1 Requisitos Zabbix
+
+1.1 De acordo com a documentação oficial Zabbix é necessário:
+
+1.1.1 Zabbix Server
+1.1.2 Zabbix Agent 2
+
+Clique aqui para acessar as configurações necessarias para o funcionamento do modulo Modbus nativamente.
+
+
+## 2 Requisitos Modbus
+
 Modbus poll
 
 -Para verificar as coletas dos dados do dispositivo, usa-se o software Modbus poll no link, ou procure no site do fabricante as chaves com as traducoes para as capturas.
@@ -26,4 +36,10 @@ Modbus poll
     -Selecione Agente passivo
     -adicione a chave > aqui adicione a seguinte sequencia ...
     -
+
+* FUNCIONAMENTO MODBUS
+
+Mode Slave
+
+
 
