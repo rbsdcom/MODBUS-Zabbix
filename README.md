@@ -31,7 +31,7 @@ Conhecimento necessario:
 
 ## Config Zabbix Server GUI
 1 Crie um host
-    -adicione um nome
+    -adicione um nome <br>
     -adicione a fonte de coleta > *para realizar esta coleta, um dispositivo na rede sera usado para coletar e enviar, no nosso caso usamos uma instancia Zabbix Proxy, mas pode ser qualquer servidor com Zabbix Agent2.
     -Adicione os templates padroes e os grupos de hosts
 
