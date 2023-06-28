@@ -1,0 +1,3 @@
+* FUNCIONAMENTO MODBUS
+
+Mode Slave
