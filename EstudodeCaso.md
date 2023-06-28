@@ -7,6 +7,7 @@ Segue documentação das descobertas:
 
 2- Descoberta dos parametros através do Modbus poll
     2.1 Teste de coleta
+        zabbix_get 127.0.0.1 -p 10050 -k modbus.get[tcp:ip_destino:502,,3,id_modbus]
 
 3- Criação do Host para monitoramento
 
