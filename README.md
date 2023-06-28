@@ -3,29 +3,31 @@
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
-Conhecimento necessario, dominio do Zabbix server, conhecimento basico Zabbix agent 2
+Conhecimento necessario:
+    Dominio do Zabbix server, 
+    Conhecimento basico Zabbix agent 2
 
 ## 1 Requisitos Zabbix
 
-1.1 De acordo com a documentação oficial Zabbix é necessário:
+1.1 De acordo com a <a href="https://www.zabbix.com/integrations/modbus"> Documentação Oficial </a> de integração Protocol Modbus + Zabbix, é necessário:
 
-1.1.1 Zabbix Server
+    1.1.1 Zabbix Server 
 
-1.1.2 Zabbix Agent 2
+    1.1.2 Zabbix Agent 2 
+        1.1.2.1 Adicionar 3 parametros especificos
 
-Clique aqui para acessar as configurações necessarias para o funcionamento do modulo Modbus nativamente.
 
 
 ## 2 Requisitos Modbus
 
 2.1 Modbus poll
 
--Para verificar as coletas dos dados do dispositivo, usa-se o software Modbus poll no link, ou procure no site do fabricante as chaves com as traducoes para as capturas.
+-Para realizar as coletas dos dados do dispositivo, geralmente uso o software <a href="https://www.modbustools.com/download.html">  Modbus poll </a>. O fabricante pode disponibilizar as chaves com as traducoes para as capturas.
 
 -Para conectar ao Modbus pool e usar para fazer o scan, use este tutorial
 
 -Como usar o ZABBIX para realizar as coletas:
-*   Depois do ITEM validado e comparado com o dispositivo, segue passo a passo:
+*   Depois do ITEM validado e comparado com o dispositivo, segue:
 
 ## Config Zabbix Server GUI
 1 Crie um host
@@ -40,14 +42,9 @@ Clique aqui para acessar as configurações necessarias para o funcionamento do 
     -adicione a chave > aqui adicione a seguinte sequencia ...
     -
 
-* FUNCIONAMENTO MODBUS
-
-Mode Slave
 
 
-## Estudo de caso Gerador Generac DepSea 855
 
-Neste estudo de caso, foi usado para monitorar 2 geradores da marca generac com o modulo de monitoramento Depsea 855. Portanto segue documentação das descobertas
 
 
 
