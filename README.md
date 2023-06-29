@@ -11,10 +11,11 @@ Conhecimento necessario:
 
 1.1 De acordo com a <a href="https://www.zabbix.com/integrations/modbus"> Documentação Oficial </a> de integração Protocol Modbus + Zabbix, é necessário:
 
-    1.1.1 Zabbix Server 
+1.1.1 Zabbix Server 
 
-    1.1.2 Zabbix Agent 2 
-        1.1.2.1 Adicionar 3 parametros especificos
+1.1.2 Zabbix Agent 2 
+
+1.1.2.1 Adicionar 3 parametros especificos
 
 
 
