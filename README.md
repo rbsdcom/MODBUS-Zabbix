@@ -29,16 +29,16 @@ Conhecimento necessario:
 -Como usar o ZABBIX para realizar as coletas:
 *   Depois do ITEM validado e comparado com o dispositivo, segue:
 
-## Config Zabbix Server GUI
+## 3 Config Zabbix Server GUI
 1 Crie um host
     -adicione um nome <br>
-    -adicione a fonte de coleta > *para realizar esta coleta, um dispositivo na rede sera usado para coletar e enviar, no nosso caso usamos uma instancia Zabbix Proxy, mas pode ser qualquer servidor com Zabbix Agent2.
-    -Adicione os templates padroes e os grupos de hosts
+    -adicione a fonte de coleta > *para realizar esta coleta, um dispositivo na rede sera usado para coletar e enviar, no nosso caso usamos uma instancia Zabbix Proxy, mas pode ser qualquer servidor com Zabbix Agent2. <br>
+    -Adicione os templates padroes e os grupos de hosts <br>
 
 
 2 Crie um Item
-    -Adcione um nome
-    -Selecione Agente passivo
+    -Adcione um nome<br>
+    -Selecione Agente passivo <br>
     -adicione a chave > aqui adicione a seguinte sequencia ...
     -
 
