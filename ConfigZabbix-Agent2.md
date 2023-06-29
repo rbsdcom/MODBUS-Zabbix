@@ -1,7 +1,8 @@
 ## Configurações Zabbix Agent 2
 
 Acessar as configurações do Agent2
- nano /etc/zabbix/zabbix_agent2.conf
+ 
+    nano /etc/zabbix/zabbix_agent2.conf
 
 
 1.2 Configurações Zabbix Agent 2
