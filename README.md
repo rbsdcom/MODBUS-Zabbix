@@ -121,21 +121,20 @@ Agora, configure o Zabbix GUI.
 
 # 5. Configurando Zabbix GUI
 
-* Criar um host
+* Criando um host
     
-    -adicione um nome <br>
-    -adicione a fonte de coleta > *para realizar esta coleta, um dispositivo na rede sera usado para coletar e enviar, no nosso caso usamos uma instancia Zabbix Proxy, mas pode ser qualquer servidor com Zabbix Agent2. <br>
-    -Adicione os templates padroes e os grupos de hosts <br>
+    - Host Name 
+    - Host Group
+    - E demais informações do Host
+    
+ 
+* Criando um Item Modbus
 
-
-* Crie um Item
-
-    -Adcione um nome<br>
-    -Selecione Agente passivo <br>
-    -adicione a chave > aqui adicione a seguinte sequencia ...
-
-
-
+    - Name 
+    - Selecione o Tipo Zabbix Agente
+    - Tipo de informação referente ao parametro
+    - Key: modbus.get[MB1,,,EndereçoKey]
+    - Inserir as demais informações de parametros de coleta (Units, update interval etc.)
 
 
 ## Contributing
