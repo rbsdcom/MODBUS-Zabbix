@@ -2,53 +2,55 @@
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
- Repository to show conection from protocol MODBUS to Zabbix. This project exemple connect Generator Generac items  
+Repository to show conection from protocol MODBUS to Zabbix. This project exemple connect Generator Generac items  
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
-Conhecimento necessario:
-    Dominio do Zabbix server, 
-    Conhecimento basico Zabbix agent 2
+
 
 # 1. Requirements
 
-*  De acordo com a <a href="https://www.zabbix.com/integrations/modbus"> Documentação Oficial </a> de integração Protocol Modbus + Zabbix, é necessário:
+* Required Knowledge:
+    - Proficiency in Zabbix server administration
+    - Basic understanding of Zabbix Agent 2
+
+*  According to <a href="https://www.zabbix.com/integrations/modbus"> Official Documentation Zabbix </a> integration Protocol Modbus + Zabbix, the following steps are required:
     - Zabbix Agent 2
-        - Inserir parametros especificos
+        - Insert specific parameters.
     - Go >= 1.12 (only required for building from source)
 
 
 # 2. Protocolo modbus
 
-1. Conceito Enlace/Aplicação
+1. Concept Link/Application
 
-- O Modbus é um protocolo de comunicação mestre/escravo, o que significa que há um dispositivo mestre que inicia as transações de comunicação e um ou mais dispositivos escravos que respondem às solicitações do mestre. O dispositivo mestre envia comandos para os dispositivos escravos e recebe dados em resposta.
+- Modbus is a master/slave communication protocol, which means that there is a master device that initiates communication transactions and one or more slave devices that respond to the master's requests. The master device sends commands to the slave devices and receives data in response.
 
 
 
-2. Protocolos de comunicação e Parametros
+2. Communication Protocols and Parameters
 
-- Os dois protocolos mais comuns são o Modbus RTU (Unidade de Terminal Remota) e o Modbus TCP (Protocolo de Controle de Transmissão). O Modbus RTU é uma implementação serial que utiliza uma conexão RS-485 ou RS-232, enquanto o Modbus TCP é baseado em Ethernet.
+- The two most common protocols are Modbus RTU (Remote Terminal Unit) and Modbus TCP (Transmission Control Protocol). Modbus RTU is a serial implementation that uses RS-485 or RS-232 connections, while Modbus TCP is based on Ethernet.
 
-- O modbus tem 8 parâmetros para passar: endpoint, slaveid, function, address, count, type, endianness e offset.
+- Modbus has 8 parameters to pass: endpoint, slaveid, function, address, count, type, endianness, and offset.
 
-    * Endpoint: aqui é referente ao dispositivo, tcp:IP_destino:502, ou conforme configurado no arquivo de configuração,  MB1.
-    - Slaveid: Como o arquivo de configuração já existe, ele está vazio aqui.
-    - Função: Este valor está incluído no endereço completo do banco de dados, não sendo necessário preenchê-lo ou deixar-lo em branco.
-    - Endereço: Esta é a chave, o endereço do item que apresentará a informação. Para descobrir a chave é necessário consultar as documentações do fabricante ou **SIGA PARA O ITEM 3** que apresento alternativa para coleta das chaves. Neste exemplo se eu quiser capturar o nível de combustivel de um gerador que usa o modulo DSE 855, temos a chave 1809 aqui.
-    - Count: quantos dados obter, o padrão é 1, se você deseja obter dados de 40001 e dos seguintes endereços respiratórios, preencha o número necessário e obtenha uma matriz. Aqui somos uma aquisição única, então pre encha 1.
-    - Digite: Preencha aqui de acordo com o tipo de dados modbus Todos os campos do modbus no Delta InfraSuite Manager são dados de ponto flutuante, então preencha float aqui.
-    - Endianness: Aqui também é preenchido de acordo com o código do tipo de dados modbus Todos os campos do modbus do Delta InfraSuite Manager são codificados em Big endian, então preencha aqui.
-    - Offset: Este parâmetro é usado para obter os dados antes ou depois do endereço de destino, se os dados do endereço de destino foram capturados, não é necessário preencher aqui.
+    - Endpoint: This refers to the device, either tcp:destination_IP:502 or as configured in the configuration file, MB1.
+    - Slaveid: Since the configuration file already exists, it is empty here.
+    - Function: This value is included in the complete database address, so it is not necessary to fill it in or leave it blank.
+    - Address: This is the key, the address of the item that will present the information. To find the key, you need to consult the manufacturer's documentation or PROCEED TO ITEM 3 where I present an alternative for collecting the keys. In this example, if I want to capture the fuel level of a generator that uses the DSE 855 module, we have the key 1809 here.
+    - Count: How many data to obtain, the default is 1. If you want to obtain data from 40001 and the following contiguous addresses, fill in the necessary number and obtain an array. Here, we are acquiring a single value, so fill in 1.
+    - Type: Fill in according to the Modbus data type. All Modbus fields in the Delta InfraSuite Manager are floating-point data, so fill in float here.
+    - Endianness: Fill in according to the Modbus data type code. All Modbus fields in the Delta InfraSuite Manager are encoded in Big endian, so fill it in here.
+    - Offset: This parameter is used to obtain data before or after the target address. If the data from the target address is being captured, it is not necessary to fill it in here.
 
-- Então o formato de nossos dados capturados aqui é: <br>
+- So, the format of our captured data here is: <br>
     modbus.get[MB1,,,1809,1,float,be,].
 
 
 
-# 3. Fazendo coletas e testes Modbus
+# 3. Perfmormin Modbus and collection tests
 
-1. Descoberta dos parametros através do Modbus poll
+1. Parameter discovery through Modbus poll
 
     * Conforme informado, consulte o fabricante para verificar disponibilide das chaves com as traduções para as capturas.
 
@@ -61,7 +63,7 @@ Conhecimento necessario:
             * clique em Address Scan.
             * Insira o valor de Start e End Address, por último clique em Scan
 
-2. Usar o ZABBIX para realizar as coletas:
+2. Use ZABBIX to perform data collections :
 *   Depois do ITEM validado e comparado com as informações do dispositivo realize os procedimentos abaixoÇ=.  
     
 * Teste de coleta via linha de comando:
@@ -104,7 +106,7 @@ The Modbus plugin is included with the Zabbix Agent 2 and doesn't require any ad
 
     Replace `<IP_destino>`, with the appropriate values for your Modbus device.
 
-    - Salvar e fechar o arquivo de configuração
+    - Save and close the file configuratio.
 
 
 4. Restart Zabbix Agent 2: After making the configuration changes, restart the Zabbix Agent 2 service for the changes to take effect. Use the appropriate command for your operating system. For example, on Linux, you can use:
@@ -116,25 +118,25 @@ The Modbus plugin is included with the Zabbix Agent 2 and doesn't require any ad
 
 Congratulations! You have successfully integrated Modbus devices with Zabbix using the Modbus plugin. You can now monitor and collect data from Modbus devices through the Zabbix monitoring system.
 
-Agora, configure o Zabbix GUI.
+Now, configure the Zabbix GUI.
 
 
 # 5. Configurando Zabbix GUI
 
-* Criando um host
+* Criating a host
     
     - Host Name 
     - Host Group
-    - E demais informações do Host
+    - And others Host Informations
     
  
-* Criando um Item Modbus
+* Criating a Modbus Item
 
     - Name 
-    - Selecione o Tipo Zabbix Agente
-    - Tipo de informação referente ao parametro
+    - Select type Zabbix Agent
+    - Type of information related to the parameter
     - Key: modbus.get[MB1,,,EndereçoKey]
-    - Inserir as demais informações de parametros de coleta (Units, update interval etc.)
+    - Insert the remaining information for data collection parameters (Units, update interval etc.)
 
 
 ## Contributing
