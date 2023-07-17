@@ -9,6 +9,8 @@ Segue documentação das descobertas:
     2.1 Teste de coleta
         zabbix_get 127.0.0.1 -p 10050 -k modbus.get[tcp:ip_destino:502,,3,id_modbus]
 
+        zabbix_get -s 10.0.0.11 -p 10050 -k modbus.get[MB1,,3,1027]
+
 3- Criação do Host para monitoramento
 
 4- Criação dos itens de monitoramento
