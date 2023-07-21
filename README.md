@@ -141,7 +141,8 @@ Now, configure the Zabbix GUI.
 
 ## Contributing
 
-If you wish to contribute to this project, please follow the guidelines outlined in the CONTRIBUTING file of this repository.
+If you wish to contribute to this project, please follow the guidelines outlined in the CONTRIBUTING file of this repository or send e-mail: rogerio@rogeriobatista.com.
+
 
 ## Support
 
