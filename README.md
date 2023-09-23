@@ -1,8 +1,10 @@
-# Integração Zabbix com Protocolo MODBUS
+# Integration Zabbix with Protocol MODBUS
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
-Repository to show conection from protocol MODBUS to Zabbix. This project exemple connect Generator Generac items  
+Repository to show conection from protocol MODBUS to Zabbix. 
+
+* This project exemple connect Generator Generac items. 
 
 This guide provides instructions for integrating Modbus devices with Zabbix using the Modbus plugin. The plugin allows you to monitor Modbus devices seamlessly through the Zabbix Agent 2, supporting both TCP and RTU connections.
 
@@ -20,7 +22,7 @@ This guide provides instructions for integrating Modbus devices with Zabbix usin
     - Go >= 1.12 (only required for building from source)
 
 
-# 2. Protocolo modbus
+# 2. Modbus protocol
 
 1. Concept Link/Application
 
